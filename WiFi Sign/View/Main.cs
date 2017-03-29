@@ -7,6 +7,7 @@ using WiFi_Sign.BaseClass;
 using WiFi_Sign.Class;
 using System.IO;
 using System.Data.SQLite;
+using System.Threading;
 
 namespace WiFi_Sign
 {
@@ -48,6 +49,7 @@ namespace WiFi_Sign
             catch
             {
                 AdapterList.Items.Add("寻找兼容 AirPcap™ 技术的无线网卡发生错误");
+                AdapterList.SelectedIndex = 0;
             }
         }
 
@@ -144,6 +146,17 @@ namespace WiFi_Sign
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            if (new View.Drivers().CheckInstall() == false)
+            {
+                DialogResult DrvRet = MessageBox.Show("发现系统驱动程序不完整，是否启动驱动助手修复？", "驱动助手", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (DrvRet == DialogResult.Yes)
+                {
+                    View.Drivers DriverGen = new View.Drivers();
+                    DriverGen.TopMost = true;
+                    DriverGen.Show();
+                }
+            }
             ListAllAdapter(); // 列出所有可用的无线网卡
 
             // 初始化数据库
@@ -165,7 +178,6 @@ namespace WiFi_Sign
             if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Settings WHERE key='HideNoName'", 0) == "False") HideNonameDevice.Checked = false;
             if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Settings WHERE key='AllowNotify'", 0) == "False") NotifyWhenLogon.Checked = false;
             if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Stings WHERE key='AllowSound'", 0) == "False") PlaySoundOnNotify.Checked = false;
-
 
         }
 

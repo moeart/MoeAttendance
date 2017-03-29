@@ -153,6 +153,8 @@ namespace WiFi_Sign.View
 
         private void BtnInst_Click(object sender, EventArgs e)
         {
+            this.TopMost = false;// 取消置顶
+
             var permissionSet = new PermissionSet(PermissionState.None);
             var writePermission = new FileIOPermission(FileIOPermissionAccess.Write, SysDir);
             permissionSet.AddPermission(writePermission);
@@ -224,7 +226,8 @@ namespace WiFi_Sign.View
                     isWinpcapInst = false;
                 }
             }
-
+            MessageBox.Show("驱动全部安装完成，将重新启动萌签！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Application.Restart();
         }
 
         private void BtnUninstall_Click(object sender, EventArgs e)
