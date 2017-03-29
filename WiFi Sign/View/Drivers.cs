@@ -62,6 +62,22 @@ namespace WiFi_Sign.View
 
         public bool CheckInstall()
         {
+            // 检查 MSVC++ 运行库
+            if (!File.Exists(AppDir + @"\msvcp110.dll"))
+            {
+                if (X64)
+                    File.Copy(AppDir + @"\Drivers\x64\msvcp110.dll", AppDir + @"\msvcp110.dll");
+                else
+                    File.Copy(AppDir + @"\Drivers\x86\msvcp110.dll", AppDir + @"\msvcp110.dll");
+            }
+            if (!File.Exists(AppDir + @"\msvcr110.dll"))
+            {
+                if (X64)
+                    File.Copy(AppDir + @"\Drivers\x64\msvcr110.dll", AppDir + @"\msvcr110.dll");
+                else
+                    File.Copy(AppDir + @"\Drivers\x86\msvcr110.dll", AppDir + @"\msvcr110.dll");
+            }
+
             // 检测 AirPcap 是否已安装
             int DllCount = 0;
             if (File.Exists(SysDir + @"\airpcap.dll")) DllCount++;
