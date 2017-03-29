@@ -164,7 +164,8 @@ namespace WiFi_Sign
             // 从数据库读取设置
             if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Settings WHERE key='HideNoName'", 0) == "False") HideNonameDevice.Checked = false;
             if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Settings WHERE key='AllowNotify'", 0) == "False") NotifyWhenLogon.Checked = false;
-            if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Settings WHERE key='AllowSound'", 0) == "False") PlaySoundOnNotify.Checked = false;
+            if (DataBase.QueryOnce(Config.DbFile, $"SELECT value FROM Stings WHERE key='AllowSound'", 0) == "False") PlaySoundOnNotify.Checked = false;
+
 
         }
 
@@ -408,6 +409,11 @@ namespace WiFi_Sign
         private void SaveTimer_Tick(object sender, EventArgs e)
         {
             SaveReportForm(false);
+        }
+
+        private void 驱动助手DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new View.Drivers().Show();
         }
     }
 }

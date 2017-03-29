@@ -49,27 +49,28 @@
             this.DeviceOnlineCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存报表SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NotifyWhenLogon = new System.Windows.Forms.ToolStripMenuItem();
+            this.PlaySoundOnNotify = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.上下班时间TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.成员MToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加成员AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.成员管理MToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.HideNonameDevice = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看统计报表VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.HideNonameDevice = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.清空列表CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看地址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.设置SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NotifyWhenLogon = new System.Windows.Forms.ToolStripMenuItem();
-            this.PlaySoundOnNotify = new System.Windows.Forms.ToolStripMenuItem();
-            this.成员管理MToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.上下班时间TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查看统计报表VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.保存报表SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveTimer = new System.Windows.Forms.Timer(this.components);
+            this.驱动助手DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeviceContextMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -234,89 +235,19 @@
             this.文件FToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.文件FToolStripMenuItem.Text = "文件(&F)";
             // 
+            // 保存报表SToolStripMenuItem
+            // 
+            this.保存报表SToolStripMenuItem.Name = "保存报表SToolStripMenuItem";
+            this.保存报表SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.保存报表SToolStripMenuItem.Text = "保存报表(&S)";
+            this.保存报表SToolStripMenuItem.Click += new System.EventHandler(this.保存报表SToolStripMenuItem_Click);
+            // 
             // 退出XToolStripMenuItem
             // 
             this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
             this.退出XToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出XToolStripMenuItem.Text = "退出(&X)";
             this.退出XToolStripMenuItem.Click += new System.EventHandler(this.退出XToolStripMenuItem_Click);
-            // 
-            // 成员MToolStripMenuItem
-            // 
-            this.成员MToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.添加成员AToolStripMenuItem,
-            this.成员管理MToolStripMenuItem});
-            this.成员MToolStripMenuItem.Name = "成员MToolStripMenuItem";
-            this.成员MToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.成员MToolStripMenuItem.Text = "成员(&M)";
-            // 
-            // 添加成员AToolStripMenuItem
-            // 
-            this.添加成员AToolStripMenuItem.Name = "添加成员AToolStripMenuItem";
-            this.添加成员AToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.添加成员AToolStripMenuItem.Text = "添加成员(&A) ...";
-            this.添加成员AToolStripMenuItem.Click += new System.EventHandler(this.添加成员AToolStripMenuItem_Click);
-            // 
-            // 查看VToolStripMenuItem
-            // 
-            this.查看VToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.查看统计报表VToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.HideNonameDevice,
-            this.toolStripMenuItem3,
-            this.清空列表CToolStripMenuItem});
-            this.查看VToolStripMenuItem.Name = "查看VToolStripMenuItem";
-            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.查看VToolStripMenuItem.Text = "列表(&L)";
-            // 
-            // HideNonameDevice
-            // 
-            this.HideNonameDevice.Checked = true;
-            this.HideNonameDevice.CheckOnClick = true;
-            this.HideNonameDevice.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.HideNonameDevice.Name = "HideNonameDevice";
-            this.HideNonameDevice.Size = new System.Drawing.Size(182, 22);
-            this.HideNonameDevice.Text = "隐藏未登记设备(&H)";
-            this.HideNonameDevice.Click += new System.EventHandler(this.HideNonameDevice_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 6);
-            // 
-            // 清空列表CToolStripMenuItem
-            // 
-            this.清空列表CToolStripMenuItem.Name = "清空列表CToolStripMenuItem";
-            this.清空列表CToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.清空列表CToolStripMenuItem.Text = "清空列表(&C) ...";
-            this.清空列表CToolStripMenuItem.Click += new System.EventHandler(this.清空列表CToolStripMenuItem_Click);
-            // 
-            // 帮助HToolStripMenuItem
-            // 
-            this.帮助HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.关于AToolStripMenuItem});
-            this.帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem";
-            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.帮助HToolStripMenuItem.Text = "帮助(&H)";
-            // 
-            // 关于AToolStripMenuItem
-            // 
-            this.关于AToolStripMenuItem.Name = "关于AToolStripMenuItem";
-            this.关于AToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.关于AToolStripMenuItem.Text = "关于(&A) ...";
-            this.关于AToolStripMenuItem.Click += new System.EventHandler(this.关于AToolStripMenuItem_Click);
-            // 
-            // 查看地址ToolStripMenuItem
-            // 
-            this.查看地址ToolStripMenuItem.Name = "查看地址ToolStripMenuItem";
-            this.查看地址ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "萌签";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // 设置SToolStripMenuItem
             // 
@@ -349,13 +280,6 @@
             this.PlaySoundOnNotify.Text = "弹窗时播放声音(&S)";
             this.PlaySoundOnNotify.Click += new System.EventHandler(this.PlaySoundOnNotify_Click);
             // 
-            // 成员管理MToolStripMenuItem
-            // 
-            this.成员管理MToolStripMenuItem.Name = "成员管理MToolStripMenuItem";
-            this.成员管理MToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.成员管理MToolStripMenuItem.Text = "成员管理(&M) ...";
-            this.成员管理MToolStripMenuItem.Click += new System.EventHandler(this.成员管理MToolStripMenuItem_Click);
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -368,6 +292,41 @@
             this.上下班时间TToolStripMenuItem.Text = "上下班时间(&T) ...";
             this.上下班时间TToolStripMenuItem.Click += new System.EventHandler(this.上下班时间TToolStripMenuItem_Click);
             // 
+            // 成员MToolStripMenuItem
+            // 
+            this.成员MToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加成员AToolStripMenuItem,
+            this.成员管理MToolStripMenuItem});
+            this.成员MToolStripMenuItem.Name = "成员MToolStripMenuItem";
+            this.成员MToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.成员MToolStripMenuItem.Text = "成员(&M)";
+            // 
+            // 添加成员AToolStripMenuItem
+            // 
+            this.添加成员AToolStripMenuItem.Name = "添加成员AToolStripMenuItem";
+            this.添加成员AToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.添加成员AToolStripMenuItem.Text = "添加成员(&A) ...";
+            this.添加成员AToolStripMenuItem.Click += new System.EventHandler(this.添加成员AToolStripMenuItem_Click);
+            // 
+            // 成员管理MToolStripMenuItem
+            // 
+            this.成员管理MToolStripMenuItem.Name = "成员管理MToolStripMenuItem";
+            this.成员管理MToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.成员管理MToolStripMenuItem.Text = "成员管理(&M) ...";
+            this.成员管理MToolStripMenuItem.Click += new System.EventHandler(this.成员管理MToolStripMenuItem_Click);
+            // 
+            // 查看VToolStripMenuItem
+            // 
+            this.查看VToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.查看统计报表VToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.HideNonameDevice,
+            this.toolStripMenuItem3,
+            this.清空列表CToolStripMenuItem});
+            this.查看VToolStripMenuItem.Name = "查看VToolStripMenuItem";
+            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.查看VToolStripMenuItem.Text = "列表(&L)";
+            // 
             // 查看统计报表VToolStripMenuItem
             // 
             this.查看统计报表VToolStripMenuItem.Name = "查看统计报表VToolStripMenuItem";
@@ -375,21 +334,71 @@
             this.查看统计报表VToolStripMenuItem.Text = "查看统计报表(&V) ...";
             this.查看统计报表VToolStripMenuItem.Click += new System.EventHandler(this.查看统计报表VToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 6);
+            // 
+            // HideNonameDevice
+            // 
+            this.HideNonameDevice.Checked = true;
+            this.HideNonameDevice.CheckOnClick = true;
+            this.HideNonameDevice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.HideNonameDevice.Name = "HideNonameDevice";
+            this.HideNonameDevice.Size = new System.Drawing.Size(182, 22);
+            this.HideNonameDevice.Text = "隐藏未登记设备(&H)";
+            this.HideNonameDevice.Click += new System.EventHandler(this.HideNonameDevice_Click);
+            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(179, 6);
             // 
-            // 保存报表SToolStripMenuItem
+            // 清空列表CToolStripMenuItem
             // 
-            this.保存报表SToolStripMenuItem.Name = "保存报表SToolStripMenuItem";
-            this.保存报表SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.保存报表SToolStripMenuItem.Text = "保存报表(&S)";
-            this.保存报表SToolStripMenuItem.Click += new System.EventHandler(this.保存报表SToolStripMenuItem_Click);
+            this.清空列表CToolStripMenuItem.Name = "清空列表CToolStripMenuItem";
+            this.清空列表CToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.清空列表CToolStripMenuItem.Text = "清空列表(&C) ...";
+            this.清空列表CToolStripMenuItem.Click += new System.EventHandler(this.清空列表CToolStripMenuItem_Click);
+            // 
+            // 帮助HToolStripMenuItem
+            // 
+            this.帮助HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.驱动助手DToolStripMenuItem,
+            this.关于AToolStripMenuItem});
+            this.帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem";
+            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.帮助HToolStripMenuItem.Text = "帮助(&H)";
+            // 
+            // 关于AToolStripMenuItem
+            // 
+            this.关于AToolStripMenuItem.Name = "关于AToolStripMenuItem";
+            this.关于AToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.关于AToolStripMenuItem.Text = "关于(&A) ...";
+            this.关于AToolStripMenuItem.Click += new System.EventHandler(this.关于AToolStripMenuItem_Click);
+            // 
+            // 查看地址ToolStripMenuItem
+            // 
+            this.查看地址ToolStripMenuItem.Name = "查看地址ToolStripMenuItem";
+            this.查看地址ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "萌签";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // SaveTimer
             // 
             this.SaveTimer.Tick += new System.EventHandler(this.SaveTimer_Tick);
+            // 
+            // 驱动助手DToolStripMenuItem
+            // 
+            this.驱动助手DToolStripMenuItem.Name = "驱动助手DToolStripMenuItem";
+            this.驱动助手DToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.驱动助手DToolStripMenuItem.Text = "驱动助手(&D) ...";
+            this.驱动助手DToolStripMenuItem.Click += new System.EventHandler(this.驱动助手DToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -460,6 +469,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem 保存报表SToolStripMenuItem;
         private System.Windows.Forms.Timer SaveTimer;
+        private System.Windows.Forms.ToolStripMenuItem 驱动助手DToolStripMenuItem;
     }
 }
 

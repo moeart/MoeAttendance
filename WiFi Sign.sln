@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiFi Sign", "WiFi Sign\WiFi Sign.csproj", "{10798963-E2CA-4DA4-B5EE-FF612BC3570A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverUninstaller", "DriverUninstaller\DriverUninstaller.csproj", "{95693824-3526-4B0A-AD53-661BA01D79DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{10798963-E2CA-4DA4-B5EE-FF612BC3570A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10798963-E2CA-4DA4-B5EE-FF612BC3570A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10798963-E2CA-4DA4-B5EE-FF612BC3570A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95693824-3526-4B0A-AD53-661BA01D79DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95693824-3526-4B0A-AD53-661BA01D79DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95693824-3526-4B0A-AD53-661BA01D79DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95693824-3526-4B0A-AD53-661BA01D79DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
