@@ -20,6 +20,7 @@ namespace WiFi_Sign.View
         private void Report_Load(object sender, EventArgs e)
         {
             dateTimePicker1.MaxDate = DateTime.Today;
+            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,36 +76,43 @@ namespace WiFi_Sign.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-            app.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
-            Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
-
-            int i = 1;
-            int i2 = 1;
-
-            // 初始化表头
-            foreach (ColumnHeader col in SignList.Columns)
+            try
             {
-                ws.Cells[i2, i++] = col.Text;
-            }
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                app.Visible = true;
+                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
+                Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
 
-            i2 = 2; // 跳过表头来到第二行
-            foreach (ListViewItem lvi in SignList.Items)
-            {
-                i = 1;
-                foreach (ListViewItem.ListViewSubItem lvs in lvi.SubItems)
+                int i = 1;
+                int i2 = 1;
+
+                // 初始化表头
+                foreach (ColumnHeader col in SignList.Columns)
                 {
-                    ws.Cells[i2, i] = lvs.Text;
-                    i++;
+                    ws.Cells[i2, i++] = col.Text;
                 }
-                i2++;
-            }
 
-            //make all columns autofit
-            //ws.Cells.Select();
-            ws.Cells.EntireColumn.AutoFit();
-            ws.Name = dateTimePicker1.Value.ToLongDateString() + "签到记录";
+                i2 = 2; // 跳过表头来到第二行
+                foreach (ListViewItem lvi in SignList.Items)
+                {
+                    i = 1;
+                    foreach (ListViewItem.ListViewSubItem lvs in lvi.SubItems)
+                    {
+                        ws.Cells[i2, i] = lvs.Text;
+                        i++;
+                    }
+                    i2++;
+                }
+
+                //make all columns autofit
+                //ws.Cells.Select();
+                ws.Cells.EntireColumn.AutoFit();
+                ws.Name = dateTimePicker1.Value.ToLongDateString() + "签到记录";
+            }
+            catch
+            {
+                MessageBox.Show("您可能未安装完整版 Microsoft Office", "缺少组件", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
